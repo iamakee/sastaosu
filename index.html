@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button id="osu"></button>
+    <script>
+        const button = document.querySelector('#osu');
+        let x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+        let y = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+
+        button.addEventListener("click", function() {
+        x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+        x = Math.max(0 + 100, x - 100);
+        y = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+        y = Math.max(0 + 100, y - 100);
+        
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
